@@ -1,0 +1,23 @@
+function translatePigLatin(str) {
+  let fLetter=str[0];
+  let vowels='aeiou';
+  let newWord='';
+  if(fLetter.match(/[aeiou]/gi))
+  return str+'way';
+  else
+  {
+    let i=1;
+    while(vowels.includes(str[i])===false){
+        if(i<str.length){
+          fLetter+=str[i]
+          i++;
+        }
+        else 
+          break;
+    }
+    newWord=str.slice(i,str.length)+fLetter+'ay'
+  }
+  return newWord
+}
+
+console.log(translatePigLatin("algorithm"));
