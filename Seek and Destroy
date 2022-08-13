@@ -1,0 +1,22 @@
+function destroyer(arr) {
+  let array2=[];
+  let newArr=[];
+  let arg=arguments;
+  let len=arr.length
+  
+  for (let n=1; n<arguments.length; n++){
+      array2.push(arg[n]);  
+    }
+  for (let i=len-1;i>=0;i--){
+    for(let j=array2.length-1;j>=0; j--){
+      if(arr[i]===array2[j]){
+        arr.splice(i,1);
+        
+      }
+    }
+  }
+ 
+  return arr;
+}
+
+console.log(destroyer(["tree", "hamburger", 53], "tree", 53));
