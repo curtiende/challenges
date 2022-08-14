@@ -1,0 +1,33 @@
+function convertHTML(str) {
+  let newStr=[]//str.split('');
+  let output='';
+  for(let i=0; i<str.length; i++){
+    switch(str[i]){
+      case '&': 
+        newStr.push('&amp;')
+        break;
+      case '<':
+        newStr.push('&lt;')
+        break;
+      case '>': 
+        newStr.push('&gt;')
+        break;
+      case '"': 
+        newStr.push('&quot;');
+        break;
+      case "'": 
+        newStr.push('&apos;');
+        break;
+      default:  
+        newStr.push(str[i]);
+
+    }
+    
+  output=newStr.join(''); 
+  }
+  
+  return output
+}
+
+
+console.log(convertHTML("abc"));
